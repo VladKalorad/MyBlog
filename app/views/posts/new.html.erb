@@ -1,10 +1,21 @@
-<h2>Добавление нового поста</h2>
+<h2>Добавить пост: </h2>
 <%= form_for :post, url: posts_path do |f| %>
 <% if @post.errors.any? %>
   <% @post.errors.full_messages.each do |msg| %>
   <div class="alert alert-danger"><%= msg%></div>
   <%end%>
 <%end%>
+ <div class="col-12">
+    <label for="username" class="form-label">Имя пользователя</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text">@</span>
+      <input type="text" class="form-control" id="username" placeholder="Никнейм" required>
+    <div class="invalid-feedback">
+        Your username is required.
+      </div>
+    </div>
+  </div>
+<br>
 <p>
 Название <br>
 <%= f.text_field(:title, {:class => 'form-control'}) %>
