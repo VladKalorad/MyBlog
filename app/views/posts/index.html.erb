@@ -1,12 +1,19 @@
-<h1>Наш Блог:</h1>
 <% @post.each do |post| %>
-<div class="card-deck">
-  <div class="card">
-  <div class="card-body">
-  <h3 class="card-title"><%= post.title %></h3>
-  <p class="card-text"><%= post.body %></p>
-  <%= link_to "Читать далее", post_path(post), :class => 'btn btn-danger'%>
-    </div>
+<div class="card">
+<div class="row g-0 position-relative" style="background-color:#f2f0f0;">
+  <div class="col-md-6 mb-md-0 p-md-4">
+    <!--<img src="https://kidpassage.com/images/publications/batumi-mae-otdyh-pogoda/batumi-mae-otdyh-pogoda-photo1_1205896319.jpg"  alt="...">-->
+
+ <picture class="image"><%= image_tag post.image.url if post.image? %></picture>
+  </div>
+  <div class="col-md-6 p-4 ps-md-0">
+    <h2 class="mt-0"><%= post.title %></h2>
+     <p style="font-size:20px;"><%= post.body %></p>
+    <%= link_to "Читать далее", post_path(post), :class => 'btn btn-danger'%>
   </div>
 </div>
+</div>
+<br>
+<br>
+
 <% end %>
