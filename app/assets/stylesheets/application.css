@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ .myclass
+ {
+   border-radius: 35px;
+ }
+ .mainmg
+ {
+  border-radius: 30px 3px 3px 30px; 
+ }
