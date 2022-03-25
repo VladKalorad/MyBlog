@@ -1,8 +1,16 @@
-<div class="card">
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<div class="row g-0 position-relative myclass text-white" style="background-color:#2480c7;"><!--f2f0f0-->
+  <div class="col-md-6 mb-md-0 p-md-4">
+    <!--<img src="https://kidpassage.com/images/publications/batumi-mae-otdyh-pogoda/batumi-mae-otdyh-pogoda-photo1_1205896319.jpg"  alt="...">-->
 
+<%= image_tag @post.image.url , :class => "mainmg" if @post.image? %>
+  </div>
+  <div class="col-md-6 p-4 ps-md-0">
+    <h2 class="mt-0"><%= @post.title %></h2>
+     <p style="font-size:20px;"><%= @post.body %></p>
+</div>
 </div>
 <hr>
 <%= link_to "Редактировать" , edit_post_path(@post), :class => 'btn btn-warning'%><br><br>
 <%= button_to "Удалить" , post_path(@post), method: :delete , :class => 'btn btn-outline-danger'%>
+
+<%= render 'disqus' %>
